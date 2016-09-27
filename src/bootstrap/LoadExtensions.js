@@ -3,11 +3,11 @@
  * they have been installed by the user.
  */
 function loadOfficialExtensions() {
-    loadExtension('laravel-elixir-rollup-official');
-    loadExtension('laravel-elixir-stylus');
-    loadExtension('laravel-elixir-browserify-official');
-    loadExtension('laravel-elixir-webpack-official');
-    loadExtension('laravel-elixir-browsersync-official');
+    loadExtension('coldbox-elixir-rollup-official');
+    loadExtension('coldbox-elixir-stylus');
+    loadExtension('coldbox-elixir-browserify-official');
+    loadExtension('coldbox-elixir-webpack-official');
+    loadExtension('coldbox-elixir-browsersync-official');
 
     require('require-dir')('../tasks/recipes');
 };

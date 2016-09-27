@@ -6,7 +6,7 @@ describe('Webpack Task', function() {
         Elixir(mix => mix.webpack('main.js'));
 
         runGulp(() => {
-            shouldExist('./public/js/main.js');
+            shouldExist('./includes/js/main.js');
 
             done();
         });
@@ -26,7 +26,7 @@ describe('Webpack Task', function() {
         Elixir(mix => mix.webpack('main.js', null, null, { output: { filename: 'changed.js' }}));
 
         runGulp(() => {
-            shouldExist('./public/js/changed.js');
+            shouldExist('./includes/js/changed.js');
 
             done();
         });

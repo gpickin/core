@@ -6,17 +6,17 @@ describe('Rollup Task', function() {
         Elixir(mix => mix.rollup('main.js'));
 
         runGulp(() => {
-            shouldExist('./public/js/main.js',
-`(function () {
-    'use strict';
+            shouldExist('./includes/js/main.js',
+`(function (exports) {
+'use strict';
 
-    var SomeComponent = function SomeComponent() {
-        ['one', 'two'].map(function (item) { return alert(item); });
-    };
+var SomeComponent = function SomeComponent() {
+    ['one', 'two'].map(function (item) { return alert(item); });
+};
 
-    new SomeComponent();
+new SomeComponent();
 
-}());
+}((this.ColdBoxElixirBundle = this.ColdBoxElixirBundle || {})));
 
 //# sourceMappingURL=main.js.map
 `);

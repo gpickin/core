@@ -6,7 +6,7 @@ describe('Scripts Task', function() {
         Elixir(mix => mix.scripts(['lib1.js', 'lib2.js']));
 
         runGulp(() => {
-            shouldExist('public/js/all.js');
+            shouldExist('includes/js/all.js');
 
             done();
         });
@@ -31,7 +31,7 @@ describe('Scripts Task', function() {
         });
 
         runGulp(() => {
-            shouldExist('public/js/all.js');
+            shouldExist('includes/js/all.js');
 
             done();
         });

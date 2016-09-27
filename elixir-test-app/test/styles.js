@@ -6,7 +6,7 @@ describe('Styles Task', function() {
         Elixir(mix => mix.styles(['one.css', 'two.css']));
 
         runGulp(() => {
-            shouldExist('public/css/all.css');
+            shouldExist('includes/css/all.css');
 
             done();
         });
@@ -31,7 +31,7 @@ describe('Styles Task', function() {
         });
 
         runGulp(() => {
-            shouldExist('public/css/all.css');
+            shouldExist('includes/css/all.css');
 
             done();
         });

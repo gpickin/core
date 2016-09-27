@@ -2,11 +2,11 @@ describe('Sass Task', function() {
 
     beforeEach( () => Elixir.tasks.empty());
 
-    it('compiles Sass files to the public/css directory', done => {
+    it('compiles Sass files to the includes/css directory', done => {
         Elixir(mix => mix.sass('app.scss'));
 
         runGulp(() => {
-            shouldExist('./public/css/app.css');
+            shouldExist('./includes/css/app.css');
 
             done();
         });
@@ -16,7 +16,7 @@ describe('Sass Task', function() {
         Elixir(mix => mix.sass('app.scss'));
 
         runGulp(() => {
-            shouldExist('./public/css/app.css.map');
+            shouldExist('./includes/css/app.css.map');
 
             done();
         });
@@ -26,7 +26,7 @@ describe('Sass Task', function() {
         Elixir(mix => mix.sass('another.scss'));
 
         runGulp(() => {
-            shouldExist('./public/css/another.css');
+            shouldExist('./includes/css/another.css');
 
             done();
         });

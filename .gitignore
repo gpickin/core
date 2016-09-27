@@ -4,3 +4,4 @@ npm-debug.log
 todo.txt
 dist/
 *.sublime-*
+elixir-test-app/includes

@@ -6,7 +6,7 @@ Elixir.extend('babel', function() {
         Elixir.log
             .heading('Compatibility Alert!')
             .heading(
-                "'mix.babel()' was removed in Laravel Elixir 6.0. " +
+                "'mix.babel()' was removed in ColdBox Elixir 6.0. " +
                 "You'll want to instead call 'mix.rollup().'"
             );
 

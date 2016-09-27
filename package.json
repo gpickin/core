@@ -61,11 +61,10 @@
     "babel-preset-es2015": "^6.9.0",
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
-    "coldbox-elixir-browserify": "^0.1.3",
-    "coldbox-elixir-rollup": "^1.0.4",
-    "coldbox-elixir-stylus": "^2.0.2",
-    "coldbox-elixir-vue": "^0.1.4",
-    "coldbox-elixir-webpack": "^1.0.1",
+    "coldbox-elixir-browserify": "^1.0.0",
+    "coldbox-elixir-rollup": "^1.0.0",
+    "coldbox-elixir-stylus": "^1.0.0",
+    "coldbox-elixir-webpack": "^1.0.0",
     "mocha": "^2.4.5",
     "rimraf": "^2.5.2"
   }

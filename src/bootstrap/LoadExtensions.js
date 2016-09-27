@@ -3,11 +3,11 @@
  * they have been installed by the user.
  */
 function loadOfficialExtensions() {
-    loadExtension('coldbox-elixir-rollup-official');
+    loadExtension('coldbox-elixir-rollup');
     loadExtension('coldbox-elixir-stylus');
-    loadExtension('coldbox-elixir-browserify-official');
-    loadExtension('coldbox-elixir-webpack-official');
-    loadExtension('coldbox-elixir-browsersync-official');
+    loadExtension('coldbox-elixir-browserify');
+    loadExtension('coldbox-elixir-webpack');
+    loadExtension('coldbox-elixir-browsersync');
 
     require('require-dir')('../tasks/recipes');
 };

@@ -6,7 +6,7 @@ class Notification {
      * Create a new Notification instance.
      */
     constructor() {
-        this.title = 'Laravel Elixir';
+        this.title = 'ColdBox Elixir';
 
         // If an argument is provided, then we'll
         // assume they want to show a message.
@@ -27,7 +27,7 @@ class Notification {
         return notify({
             title: this.title,
             message: message,
-            icon: __dirname + '/../icons/laravel.png',
+            icon: __dirname + '/../icons/coldbox.png',
             onLast: true
         });
     }

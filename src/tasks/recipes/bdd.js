@@ -1,21 +1,21 @@
 /*
  |----------------------------------------------------------------
- | TDD Watcher
+ | BDD Watcher
  |----------------------------------------------------------------
  |
  | This task will keep an eye on any tasks that are part of the
- | tdd category. By default this includes PHPUnit and PHPSpec
- | tests. Run `gulp tdd` and your tests will auto-trigger.
+ | tdd category. By default this includes TestBox specs.
+ | Run `gulp bdd` and your tests will auto-trigger.
  |
  */
 
-gulp.task('tdd', function() {
+gulp.task('bdd', function() {
     Elixir.log.message('Watching for tests...');
 
     runAllTasks();
 
     Elixir.tasks
-        .filter(task  => task.category == 'tdd')
+        .filter(task  => task.category == 'bdd')
         .forEach(task => gulp.watch(task.watchers, [task.name]));
 });
 

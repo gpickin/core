@@ -34,8 +34,9 @@ class TestingTask extends Elixir.Task {
      */
     registerWatchers() {
         this.watch(this.src || this.pluginConfig('path') + this.pluginConfig('search'))
-            .watch(Elixir.config.appPath + '/**/*.php', 'tdd')
-            .watch(Elixir.config.viewPath + '/**/*.php', 'tdd');
+            .watch(Elixir.config.appPaths.root + '/**/*.cfc', 'bdd')
+            .watch(Elixir.config.appPaths.root + '/**/*.cfm', 'bdd')
+            .watch(Elixir.config.viewPath + '/**/*.cfm', 'bdd');
     }
 
 

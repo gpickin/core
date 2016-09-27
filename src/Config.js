@@ -67,7 +67,18 @@ const config = {
      |
      */
 
-    appPath: 'app',
+    appPaths : {
+        "root"          : "",
+        "config"        : "config",
+        "handlers"      : "handlers",
+        "interceptors"  : "interceptors",
+        "layouts"       : "layouts",
+        "models"        : "models",
+        "modules"       : "modules",
+        "modules_app"   : "modules_app",
+        "tests"         : "tests",
+        "views"         : "views"
+    },
 
     /*
      |----------------------------------------------------------------
@@ -298,37 +309,21 @@ const config = {
 
         /*
          |----------------------------------------------------------------
-         | PHPUnit Autotesting
+         | TestBox Autotesting
          |----------------------------------------------------------------
          |
-         | Want to automatically trigger your PHPUnit tests. Not a problem.
-         | This object stores your default PHPUnit directory path. For a
-         | custom command, you may use the second arg to mix.phpUnit.
+         | Want to automatically trigger your TestBox tests? Not a problem.
+         | This object stores your default TestBox directory path. For a
+         | custom command, you may use the second arg to mix.testbox.
          |
          */
 
-        phpUnit: {
-            path: 'tests',
-            search: '/**/*Test.php',
-            command: p.normalize('vendor/bin/phpunit') + ' --verbose'
+        testbox: {
+            path: 'tests/specs',
+            search: '/**/*.cfc',
+            command: 'box testbox run'
         },
 
-        /*
-         |----------------------------------------------------------------
-         | PHPSpec Autotesting
-         |----------------------------------------------------------------
-         |
-         | Want to automatically trigger your PHPSpec tests. Not a problem.
-         | This object stores your default PHPSpec directory path. For a
-         | custom command, you may use the second arg to mix.phpSpec.
-         |
-         */
-
-        phpSpec: {
-            path: 'spec',
-            search: '/**/*Spec.php',
-            command: p.normalize('vendor/bin/phpspec') + ' run'
-        }
     },
 
     /*

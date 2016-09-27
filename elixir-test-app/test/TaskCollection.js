@@ -1,4 +1,4 @@
-import TasksCollection from 'laravel-elixir/dist/tasks/TaskCollection';
+import TasksCollection from 'coldbox-elixir/dist/tasks/TaskCollection';
 
 let Task = Elixir.Task;
 

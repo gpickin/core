@@ -1,4 +1,4 @@
-import Elixir from 'laravel-elixir';
+import Elixir from 'coldbox-elixir';
 import chai from 'chai';
 import gulp from 'gulp';
 import remove from 'rimraf';

@@ -1,16 +1,17 @@
 {
   "name": "coldbox-elixir",
-  "version": "6.0.0-11",
+  "version": "2.0.0",
   "description": "ColdBox Elixir Core",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/coldbox-elixir/core"
+  },
+  "homepage": "https://github.com/coldbox-elixir/core",
   "main": "dist/index.js",
   "scripts": {
     "compile": "babel --presets=es2015 -d dist/ src/",
     "test": "cd elixir-test-app && mocha --require babel-core/register --require=test/bootstrap.js",
     "prepublish": "npm run compile"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/coldbox/elixir-1"
   },
   "keywords": [
     "coldbox",
@@ -27,7 +28,6 @@
     }
   ],
   "license": "MIT",
-  "homepage": "https://github.com/coldbox/elixir-1",
   "dependencies": {
     "clean-css": "^3.4.12",
     "cli-table": "^0.3.1",
@@ -61,11 +61,11 @@
     "babel-preset-es2015": "^6.9.0",
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
-    "coldbox-elixir-browserify-official": "^0.1.3",
-    "coldbox-elixir-rollup-official": "^1.0.4",
+    "coldbox-elixir-browserify": "^0.1.3",
+    "coldbox-elixir-rollup": "^1.0.4",
     "coldbox-elixir-stylus": "^2.0.2",
     "coldbox-elixir-vue": "^0.1.4",
-    "coldbox-elixir-webpack-official": "^1.0.1",
+    "coldbox-elixir-webpack": "^1.0.1",
     "mocha": "^2.4.5",
     "rimraf": "^2.5.2"
   }

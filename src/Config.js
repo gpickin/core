@@ -76,8 +76,7 @@ const config = {
         "models"        : "models",
         "modules"       : "modules",
         "modules_app"   : "modules_app",
-        "tests"         : "tests",
-        "views"         : "views"
+        "tests"         : "tests"
     },
 
     /*
@@ -91,7 +90,7 @@ const config = {
      |
      */
 
-    viewPath: 'resources/views',
+    viewPath: 'views',
 
     /*
      |----------------------------------------------------------------

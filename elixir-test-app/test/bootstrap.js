@@ -20,6 +20,7 @@ global.runGulp = assertions => {
     gulp.start('default', () => {
         assertions();
 
+        remove.sync('./includes');
         remove.sync('./public');
         remove.sync('./compress/all.js');
         remove.sync('./compress/all.css');

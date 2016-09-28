@@ -354,7 +354,11 @@ const config = {
     browserSync: {
         // http://www.browsersync.io/docs/options/
         reloadOnRestart : true,
-        notify: true
+        notify: true,
+        // without this, the path seems to be relative to the proxied app (which won't work)
+        scriptPath: function( path, port, options ) {
+            return options.get( "absolute" );
+        }
     },
 
     /*

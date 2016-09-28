@@ -90,7 +90,10 @@ const config = {
      |
      */
 
-    viewPath: 'views',
+    viewPaths: {
+        "views"   : "views",
+        "layouts" : "layouts"
+    },
 
     /*
      |----------------------------------------------------------------

@@ -1,8 +1,8 @@
 # ColdBox Elixir
 
-[![Build Status](https://travis-ci.org/coldbox-elixir/core.svg?branch=master)](https://travis-ci.org/coldbox-elixir/core)
-
-[![Build Status](https://travis-ci.org/coldbox-elixir/core.svg?branch=development)](https://travis-ci.org/coldbox-elixir/core)
+[![Master Branch Build Status](https://img.shields.io/travis/coldbox-elixir/core/master.svg?label=master
+)](https://travis-ci.org/coldbox-elixir/core) [![Development Branch Build Status](https://img.shields.io/travis/coldbox-elixir/core/development.svg?label=development
+)](https://travis-ci.org/coldbox-elixir/core)
 
 ## Introduction
 

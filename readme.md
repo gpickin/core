@@ -1,5 +1,9 @@
 # ColdBox Elixir
 
+[![Build Status](https://travis-ci.org/coldbox-elixir/core.svg?branch=master)](https://travis-ci.org/coldbox-elixir/core)
+
+[![Build Status](https://travis-ci.org/coldbox-elixir/core.svg?branch=development)](https://travis-ci.org/coldbox-elixir/core)
+
 ## Introduction
 
 ColdBox Elixir provides a clean, fluent API for defining basic Gulp tasks for your ColdBox application. Elixir supports several common CSS and JavaScript pre-processors, and even testing tools.

@@ -72,7 +72,6 @@ const config = {
         "config"        : "config",
         "handlers"      : "handlers",
         "interceptors"  : "interceptors",
-        "layouts"       : "layouts",
         "models"        : "models",
         "modules"       : "modules",
         "modules_app"   : "modules_app",

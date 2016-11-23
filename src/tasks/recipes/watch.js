@@ -21,6 +21,7 @@ gulp.task('watch',  ['default'], () => {
         if (task.hasWatchers()) {
             gulp.watch(task.watchers, watchOptions, batch(batchOptions, events => {
                 events.on('end', gulp.start(task.name));
+                events.on('end', (Elixir.tasks.watching = task) && gulp.start(task.name));
             }));
         }
     });

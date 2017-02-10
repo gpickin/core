@@ -1,6 +1,7 @@
 import ModuleTask from "../ModuleTask";
 import fs from "fs";
 import path from "path";
+import events from "events";
 
 /*
  |----------------------------------------------------------------
@@ -18,8 +19,10 @@ Elixir.extend( "module", function( name, baseDir = Elixir.config.appPaths[ "modu
 });
 
 Elixir.extend( "modules", function( baseDir = Elixir.config.appPaths[ "modules_app" ] ) {
-    var modules = fs.readdirSync( path.resolve( baseDir ) )
+    let modules = fs.readdirSync( path.resolve( baseDir ) )
         .filter( file => fs.statSync( path.resolve( baseDir, file ) ).isDirectory() )
-        .filter( dir => fs.existsSync( path.join( baseDir, dir, "gulpfile.js" ) ) )
-        .forEach( module => new ModuleTask( "module", module, baseDir ) );
+        .filter( dir => fs.existsSync( path.join( baseDir, dir, "gulpfile.js" ) ) );
+
+    events.EventEmitter.prototype._maxListeners = (modules.length || 0) + 1;
+    modules.forEach( module => new ModuleTask( "module", module, baseDir ) );
 } );

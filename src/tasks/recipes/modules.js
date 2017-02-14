@@ -15,7 +15,7 @@ import events from "events";
  */
 
 Elixir.extend( "module", function( name, baseDir = Elixir.config.appPaths[ "modules_app" ] ) {
-    new ModuleTask( "module", name, baseDir );
+    discoverModule( name, baseDir );
 });
 
 Elixir.extend( "modules", function( baseDir = Elixir.config.appPaths[ "modules_app" ] ) {
@@ -24,5 +24,15 @@ Elixir.extend( "modules", function( baseDir = Elixir.config.appPaths[ "modules_a
         .filter( dir => fs.existsSync( path.join( baseDir, dir, "gulpfile.js" ) ) );
 
     events.EventEmitter.prototype._maxListeners = (modules.length || 0) + 1;
-    modules.forEach( module => new ModuleTask( "module", module, baseDir ) );
+    modules.forEach( module => discoverModule( module, baseDir ) );
 } );
+
+function discoverModule( moduleName, baseDir ) {
+    var modulePath = path.join( Elixir.config.appPaths[ "modules_app" ], moduleName );
+    var moduleGulpfilePath = path.resolve( path.join( modulePath, "gulpfile.js" ) );
+    var moduleGulpfile = require( moduleGulpfilePath );
+    var originalBasePath = Elixir.config.basePath;
+    Elixir.config.basePath = modulePath;
+    moduleGulpfile( Elixir.mixins );
+    Elixir.config.basePath = originalBasePath;
+}

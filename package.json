@@ -1,6 +1,6 @@
 {
   "name": "coldbox-elixir",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "ColdBox Elixir Core",
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "gulp-if": "^2.0.0",
     "gulp-less": "^3.0.5",
     "gulp-load-plugins": "^1.2.2",
+    "gulp-nop": "^0.0.3",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-rev": "^7.0.0",
@@ -52,6 +53,7 @@
     "q": "^1.4.1",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
+    "spawn-default-shell": "^2.0.0",
     "underscore": "^1.8.3",
     "vinyl-map2": "^1.2.1"
   },

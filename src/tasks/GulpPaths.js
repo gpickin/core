@@ -145,13 +145,15 @@ class GulpPaths {
         } catch (e) {}
 
         return {
-            path      : path,
+            path      : p.join( Elixir.config.basePath, path ),
             name      : segments.extname ? segments.basename : '',
             extension : segments.extname,
             isDir     : ! (!! segments.extname),
-            baseDir   : segments.extname
-                            ? segments.dirname
-                            : p.join(segments.dirname, segments.basename)
+            baseDir   : p.join( Elixir.config.basePath,
+                            segments.extname
+                                ? segments.dirname
+                                : p.join(segments.dirname, segments.basename)
+                        )
         };
     }
 }

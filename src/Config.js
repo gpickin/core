@@ -17,6 +17,8 @@ import p from 'path';
 
 const config = {
 
+    basePath: "",
+
     /*
      |----------------------------------------------------------------
      | Production Mode
@@ -388,7 +390,7 @@ const config = {
  */
 config.get = function(path) {
     var basePath;
-    var current = config;
+    var current = this;
 
     var segments = path.split('.');
 
@@ -397,7 +399,7 @@ config.get = function(path) {
     // given base url to their config path. Useful!
 
     if (segments[0] == 'assets' || segments[0] == 'public') {
-        basePath = config[segments.shift()+'Path'];
+        basePath = this[segments.shift()+'Path'];
     }
 
     segments.forEach(segment => current = current[segment]);

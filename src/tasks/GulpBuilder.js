@@ -42,9 +42,13 @@ class GulpBuilder {
                     .forEach(task => task.run());
             }
 
-            return Elixir.tasks
-                .findIncompleteByName(name)[0]
-                .run();
+            var incompleteTasks = Elixir.tasks.findIncompleteByName( name );
+
+            if ( incompleteTasks.length ) {
+                return incompleteTasks[ 0 ].run();
+            }
+
+            return Elixir.tasks.byName( name )[ 0 ].run();
         });
     }
 

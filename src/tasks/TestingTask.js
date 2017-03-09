@@ -1,3 +1,5 @@
+import p from "path";
+
 class TestingTask extends Elixir.Task {
     
     /**
@@ -34,10 +36,10 @@ class TestingTask extends Elixir.Task {
      */
     registerWatchers() {
         this.watch(this.src || this.pluginConfig('path') + this.pluginConfig('search'))
-            .watch(Elixir.config.appPaths.root + '/**/*.cfc', 'bdd')
-            .watch(Elixir.config.appPaths.root + '/**/*.cfm', 'bdd')
-            .watch(Elixir.config.viewPaths.views + '/**/*.cfm', 'bdd')
-            .watch(Elixir.config.viewPaths.layouts + '/**/*.cfm', 'bdd');
+            .watch( p.join( Elixir.config.appPaths.root, '**/*.cfc' ), 'bdd')
+            .watch( p.join( Elixir.config.appPaths.root, '**/*.cfm' ), 'bdd')
+            .watch( p.join( Elixir.config.viewPaths.views, '**/*.cfm' ), 'bdd')
+            .watch( p.join( Elixir.config.viewPaths.layouts, '**/*.cfm' ), 'bdd');
     }
 
 

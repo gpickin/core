@@ -1,6 +1,6 @@
 {
   "name": "coldbox-elixir",
-  "version": "2.1.2-0",
+  "version": "2.1.3-beta",
   "description": "ColdBox Elixir Core",
   "repository": {
     "type": "git",

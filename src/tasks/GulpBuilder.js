@@ -60,7 +60,7 @@ class GulpBuilder {
      * @return {Boolean}
      */
     shouldRunAllTasksNamed(name) {
-        return intersection(gutils.env._, [name, 'watch', 'tdd']).length;
+        return intersection(gutils.env._, [name, 'tdd']).length;
     }
 }
 

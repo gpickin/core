@@ -1,3 +1,6 @@
+import { each, groupBy, pluck, union } from 'underscore';
+import inSequence from 'run-sequence';
+
 const batch = Elixir.Plugins.batch;
 
 /*
@@ -11,18 +14,24 @@ const batch = Elixir.Plugins.batch;
  |
  */
 
-gulp.task('watch',  ['default'], () => {
+gulp.task( "watch",  [], (callback) => {
     Elixir.hooks.watch.forEach(hook => hook());
 
-    Elixir.tasks.forEach(task => {
-        let batchOptions = Elixir.config.batchOptions;
-        let watchOptions = Elixir.config.watch;
+    let batchOptions = Elixir.config.batchOptions;
+    let watchOptions = Elixir.config.watch;
 
-        if (task.hasWatchers()) {
-            gulp.watch(task.watchers, watchOptions, batch(batchOptions, events => {
-                events.on('end', gulp.start(task.name));
-                events.on('end', (Elixir.tasks.watching = task) && gulp.start(task.name));
+    // `Elixir.tasks.tasks` is to get it out of the TaskCollection
+    let groupedTasks = groupBy( Elixir.tasks.tasks, "name" )
+    each( groupedTasks, function( tasks, name ) {
+        let watchers = union( pluck( tasks, "watchers" ) );
+        if ( watchers ) {
+            gulp.watch( watchers, watchOptions, batch( batchOptions, events => {
+                events.on( "end", gulp.start( name ) );
+                events.on( "end", ( Elixir.tasks.watching = name ) && gulp.start( name ) );
             }));
         }
-    });
+    } );
+
+    // run the tasks once.
+    inSequence.apply( this, Object.keys( groupedTasks ).concat( callback ) );
 });

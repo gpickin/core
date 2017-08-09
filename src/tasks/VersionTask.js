@@ -92,7 +92,9 @@ class VersionTask extends Elixir.Task {
         manifest = JSON.parse(fs.readFileSync(manifest));
 
         for (let key in manifest) {
-            del.sync(`${this.buildPath}/${manifest[key]}`, { force: true });
+            if ( fs.existsSync( `${this.buildPath}/${manifest[key]}` ) ) {
+                del.sync(`${this.buildPath}/${manifest[key]}`, { force: true });
+            }
         }
     }
 
